@@ -1,0 +1,101 @@
+body {
+    background-color: #f0f4f8; /* Fondo suave para el cuerpo */
+    font-family: 'Arial', sans-serif; /* Fuente general */
+}
+
+.formulario {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.formulario:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5); /* Sombra al enfocar */
+    outline: none;
+}
+
+.botones {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelar,
+.guardar {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancelar {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.cancelar:hover {
+    background-color: #cfcfcf;
+    transform: translateY(-2px);
+}
+
+.guardar {
+    background-color: #2196f3;
+    color: white;
+}
+
+.guardar:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+/* Estilo adicional para mensajes de error o éxito */
+.error-message {
+    color: #d32f2f; /* Rojo para errores */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #388e3c; /* Verde para éxito */
+    font-size: 12px;
+    margin-top: 5px;
+}

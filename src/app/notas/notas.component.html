@@ -1,0 +1,35 @@
+<div class="encabezado">
+  <h1>Notas</h1>
+  <button class="crear" (click)="irANotas()">+ Crear Nota</button>
+</div>
+
+<div *ngIf='notas.length > 0; else sinNotas'>
+  <div *ngFor='let n of notas' class="notacard">
+      <div>
+      <h3>{{ n.titulo }}</h3>
+      <p><em>{{ n.contenido }}</em></p>
+      <p><em>{{ n.fecha }}, {{ n.hora }}</em></p>
+
+      <label>
+        <input type="checkbox"
+        [checked]="n.completadoHoy"
+        (click)="!n.completadoHoy && marcarCompletado(n)"
+        [disabled]="n.completadoHoy" />
+        Hoy
+      </label>
+
+      <div *ngIf="n.completadoHoy" class="felicidades">
+        🎉 ¡Felicidades Pepito, cumpliste {{ n.titulo.toLowerCase() }} hoy!
+      </div>
+    </div>
+
+    <div class="acciones">
+      <button class="editar" (click)="editarNota(n)">Editar</button>
+      <button class="eliminar" (click)="eliminarNota(n.id)">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #sinNotas>
+  <p>No hay notas por ahora.</p>
+</ng-template>

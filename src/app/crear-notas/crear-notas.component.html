@@ -1,0 +1,39 @@
+<div class="formulario">
+    <h2>Crear nueva nota</h2>
+  
+    <form (ngSubmit)="agregarNota()">
+  
+      <label for="nombre">Titulo:</label>
+      <input id="nombre" type="text" [(ngModel)]="nuevaNota.titulo" name="nombre" required />
+
+      <label for="nombre">Contenido:</label>
+      <input id="contenido" type="text" [(ngModel)]="nuevaNota.contenido" name="contenido" required />
+<!--   
+      <label for="frecuencia">Frecuencia:</label>
+      <select id="frecuencia" [(ngModel)]="frecuenciaSeleccionada" name="frecuencia" required>
+        <option *ngFor="let frecuencia of frecuenciasPredefinidas" [value]="frecuencia">{{ frecuencia }}</option>
+        <option value="personalizada">Otra...</option>
+      </select>
+      <input *ngIf="frecuenciaSeleccionada === 'personalizada'" type="text" [(ngModel)]="frecuenciaPersonalizada" name="frecuenciaPersonalizada" placeholder="Escribe tu frecuencia" required />
+   -->
+      <label for="fecha">Fecha:</label>
+      <input id="fecha" type="date" [(ngModel)]="nuevaNota.fecha" name="fecha" required />
+  
+      <label for="hora">Hora:</label>
+      <input id="hora" type="time" [(ngModel)]="nuevaNota.hora" name="hora" required />
+  
+      <!-- <label for="categoria">Categoría:</label>
+      <select id="categoria" [(ngModel)]="categoriaSeleccionada" name="categoria" required>
+        <option *ngFor="let categoria of categoriasPredefinidas" [value]="categoria">{{ categoria }}</option>
+        <option value="personalizada">Otra...</option>
+      </select>
+      <input *ngIf="categoriaSeleccionada === 'personalizada'" type="text" [(ngModel)]="categoriaPersonalizada" name="categoriaPersonalizada" placeholder="Escribe tu categoría" required /> -->
+  
+      <div class="botones">
+        <button type="button" class="cancelar" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="guardar">Guardar nota</button>
+      </div>
+  
+    </form>
+  </div>
+  

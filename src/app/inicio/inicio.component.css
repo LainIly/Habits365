@@ -1,0 +1,94 @@
+body {
+  background-color: #f0f4f8; /* Fondo suave para el cuerpo */
+  font-family: 'Arial', sans-serif; /* Fuente general */
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 700;
+}
+
+.nombre-usuario {
+  color: #007bff; 
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  flex: 1 1 250px; 
+  min-width: 200px;
+  max-width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap; 
+  margin: 20px; /* Espaciado alrededor de las tarjetas */
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0;
+  color: #333;
+}
+
+p {
+  margin: 0.5em 0;
+  color: #555; /* Color de texto más suave */
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 25px;
+}
+
+button.azul {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.azul:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+button.gris {
+  background-color: #e0e0e0;
+  color: black;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.gris:hover {
+  background-color: #cfcfcf; /* Color más oscuro al pasar el mouse */
+  transform: translateY(-2px);
+}

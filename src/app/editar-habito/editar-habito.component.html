@@ -1,0 +1,27 @@
+<div class="formulario">
+  <h2>Editar Hábito</h2>
+
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="habito.nombre" />
+
+  <label>Frecuencia:</label>
+  <select [(ngModel)]="habito.frecuencia">
+    <option value="Diario">Diario</option>
+    <option value="Semanal">Semanal</option>
+    <option value="Mensual">Mensual</option>
+  </select>
+
+  <label>Fecha:</label>
+  <input type="date" [(ngModel)]="habito.fecha" />
+
+  <label>Hora:</label>
+  <input type="time" [(ngModel)]="habito.hora" />
+
+  <label>Categoría:</label>
+  <input type="text" [(ngModel)]="habito.categoria" />
+
+  <div class="botones">
+    <button (click)="cancelar()" class="cancelar">Cancelar</button>
+    <button (click)="guardarCambios()" class="guardar">Guardar Cambios</button>
+  </div>
+</div>

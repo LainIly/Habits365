@@ -1,0 +1,38 @@
+<div class="topbar">
+  <button class="toggle-btn" (click)="toggleSidebar()" aria-label="Toggle sidebar">
+    <i class="fas fa-bars"></i>
+  </button>
+  <span class="logo-text">Habits 365</span>
+  <div class="topbar-icons">
+    <button class="icon-btn" title="Seguimiento de progreso">
+      <i class="fas fa-chart-line"></i>
+    </button>
+    <button class="icon-btn" title="Notificaciones">
+      <i class="fas fa-bell"></i> 
+    </button>
+    <div class="user-avatar-container" (click)="goToUserPage()" style="cursor: pointer;">
+      <img *ngIf="avatarLoaded" 
+           [src]="avatarUrl" 
+           alt="Usuario" 
+           class="user-avatar" 
+           (error)="handleImageError()">
+      <div *ngIf="!avatarLoaded" class="avatar-fallback">U</div>
+    </div>    
+  </div>
+</div>
+
+<div class="layout">
+  <div class="sidebar" *ngIf="!isCollapsed">
+    <ul>
+      <li (click)="irAInicio()"><i class="fas fa-home"></i> Inicio</li>
+      <li (click)="irAHabitos()"><i class="fas fa-check-square"></i> Hábitos</li>
+      <li (click)="irANotas()"><i class="fas fa-sticky-note"></i> Notas</li>
+      <li (click)="irAEstadisticas()"><i class="fas fa-chart-pie"></i> Estadísticas</li>
+      <li (click)="irAHistorial()"><i class="fas fa-history"></i> Historial</li>
+      <li (click)="irAConfiguracion()"><i class="fas fa-cog"></i> Configuración</li>
+    </ul>
+  </div>
+  <div class="main-content" [class.collapsed]="isCollapsed">
+    <router-outlet></router-outlet>
+  </div>
+</div>

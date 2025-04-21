@@ -1,0 +1,49 @@
+<ng-template #noRecordatorio>
+  <div class="tarjetas">
+    <div class="tarjeta clicable" (click)="irAHabitos()">
+      <p><strong>Hábitos</strong></p>
+      <h2>{{ habitos.length }}</h2>
+      <p><em>completados</em></p>
+    </div>
+
+    <div class="tarjeta clicable" (click)="irANotas()">
+      <p><strong>Notas Rápidas</strong></p>
+      <h2>{{ notas.length }}</h2>
+      <p><em>recientes</em></p>
+    </div>
+
+    <div class="tarjeta">
+      <p><strong>Recordatorio</strong></p>
+      <p><em>No hay recordatorios</em></p>
+      <h2>—</h2>
+    </div>
+  </div>
+</ng-template>
+
+<div class="titulo">
+  <h1>Bienvenido, <span class="nombre-usuario">Pepito Pérez</span></h1>
+</div>
+
+<div *ngIf="recordatorioProximo; else noRecordatorio" class="tarjetas">
+  <div class="tarjeta clicable" (click)="irAHabitos()">
+    <p><strong>Hábitos de hoy</strong></p>
+    <h2>{{ habitos.length }}</h2>
+    <p><em>completados</em></p>
+  </div>
+
+  <div class="tarjeta clicable" (click)="irANotas()">
+    <p><strong>Notas Rápidas</strong></p>
+    <h2>{{ notas.length }}</h2>
+    <p><em>recientes</em></p>
+  </div>
+
+  <div class="tarjeta">
+    <p><strong>Recordatorio</strong></p>
+    <p><em>Próx. Notificación:</em></p>
+    <h2>{{ recordatorioProximoHora }}</h2>
+  </div>
+</div>
+<div class="botones">
+  <button class="azul" (click)="irACrearHabito()">Agregar Hábito</button>
+  <button class="gris" (click)="irACrearNota()">Agregar Nota</button>
+</div>

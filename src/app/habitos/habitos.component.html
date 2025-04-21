@@ -1,0 +1,35 @@
+<div class="encabezado">
+  <h1>Hábitos</h1>
+  <button class="crear" (click)="irAHabitos()">+ Crear Hábito</button>
+</div>
+
+<div *ngIf="habitos.length > 0; else sinHabitos">
+  <div *ngFor="let h of habitos" class="habitocard">
+    <div>
+      <h3>{{ h.nombre }}</h3>
+      <strong>Frecuencia:</strong> <em> {{ h.frecuencia }} </em>
+      <p><em>{{ h.fecha }}, {{ h.hora }}</em></p>
+
+      <label>
+        <input type="checkbox"
+               [checked]="h.completadoHoy"
+               (click)="!h.completadoHoy && marcarCompletado(h)"
+               [disabled]="h.completadoHoy" />
+        Hoy
+      </label>
+
+      <div *ngIf="h.completadoHoy" class="felicidades">
+        🎉 ¡Felicidades Pepito, cumpliste {{ h.nombre.toLowerCase() }} hoy!
+      </div>
+    </div>
+
+    <div class="acciones">
+      <button class="editar" (click)="editarHabito(h)">Editar</button>
+      <button class="eliminar" (click)="eliminarHabito(h.id)">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #sinHabitos>
+  <p>No hay hábitos por ahora.</p>
+</ng-template>
