@@ -69,4 +69,9 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/configuracion']);
     this.isCollapsed = true;
   }
+
+  irACategorias() {
+    this.router.navigate(['/crear-categoria']);
+    this.isCollapsed = true;
+  }
 }

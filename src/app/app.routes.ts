@@ -48,6 +48,16 @@ export const routes: Routes = [
       import('./configuracion/configuracion.component').then(m => m.ConfiguracionComponent)
   },
   {
+    path: 'categorias',
+    loadComponent: () =>
+      import('./categorias/categorias.component').then(m => m.CategoriasComponent)
+  },
+  {
+    path: 'crear-categoria',
+    loadComponent: () =>
+      import('./categorias/crear-categoria/crear-categoria.component').then(m => m.CrearCategoriaComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

@@ -1,0 +1,15 @@
+<div class="formulario">
+    <h2>Crear nuevo categoria</h2>
+  
+    <form (ngSubmit)="agregarCategoria()">
+
+      <label for="titulo">titulo:</label>
+      <input id="titulo" type="text" name="titulo" required />
+  
+      <div class="botones">
+        <button type="button" class="cancelar" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="guardar">Guardar hábito</button>
+      </div>
+  
+    </form>
+  </div>
