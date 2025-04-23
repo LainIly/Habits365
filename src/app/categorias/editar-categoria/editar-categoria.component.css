@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para la ventana Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente más oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    animation: fadeIn 0.4s ease-in-out; /* Animación de entrada */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .formulario {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 2.5rem;
+    border-radius: 16px; /* Bordes más redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 400px; /* Ancho máximo */
+    text-align: center; /* Centra el contenido */
+    font-family: 'Arial', sans-serif; /* Fuente general */
+    animation: slideIn 0.4s ease-in-out; /* Animación de entrada */
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  h2 {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    color: #333333; /* Color del texto */
+    font-weight: 700;
+  }
+  
+  
+  input, select {
+    width: 63%;
+    padding: 12px 15px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #555555;
+    font-size: 1rem;
+  }
+  
+  input[type="text"] {
+    width: 60%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #2196f3; /* Verde al enfocar */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra verde */
+    outline: none;
+  }
+  
+  .botones {
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .cancelar,
+  .guardar {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cancelar {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .cancelar:hover {
+    background-color: #cfcfcf;
+    transform: translateY(-2px);
+  }
+  
+  .guardar {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .guardar:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+  }

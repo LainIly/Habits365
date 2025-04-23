@@ -1,1 +1,17 @@
-<p>editar-categoria works!</p>
+<div *ngIf="modal">
+    <div class="modal">
+        <div class="formulario">
+            <h2>Editar categoria</h2>
+
+                Nombre: <input id="titulo" type="text" name="titulo" [(ngModel)]="categoria.titulo"
+                    placeholder="Salud" /><br>
+                Fecha: <input id="fecha" type="date" name="fecha" [(ngModel)]="categoria.fecha"
+                    placeholder="Salud" />
+
+                <div class="botones">
+                    <button type="button" class="cancelar" (click)="cerrarModal()">Cancelar</button>
+                    <button type="submit" class="guardar" (click)="guardarCambios()">Guardar</button>
+                </div>
+        </div>
+    </div>
+</div>

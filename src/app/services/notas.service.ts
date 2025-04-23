@@ -30,5 +30,4 @@ export class NotasService {
     const notas = this.obtenerNotas();
     return notas.find(n => n.id === id);
   }
-
 }

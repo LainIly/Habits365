@@ -58,6 +58,16 @@ export const routes: Routes = [
       import('./categorias/crear-categoria/crear-categoria.component').then(m => m.CrearCategoriaComponent)
   },
   {
+    path: 'editar-categoria',
+    loadComponent: () =>
+      import('./categorias/editar-categoria/editar-categoria.component').then(m => m.EditarCategoriaComponent)
+  },
+  {
+    path: 'listar-categoria',
+    loadComponent: () =>
+      import('./categorias/listar-categoria/listar-categoria.component').then(m => m.ListarCategoriaComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
