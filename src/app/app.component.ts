@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent implements OnInit {
   isCollapsed = false;
   avatarLoaded = false;
+  title = 'Habits 365';
   avatarUrl = 'https://i.pinimg.com/736x/23/8b/f1/238bf108e37cff674f47ea5cc3d27c55.jpg';
 
   constructor(private router: Router) {}
