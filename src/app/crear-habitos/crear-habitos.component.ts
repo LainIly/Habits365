@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HabitosService } from '../services/habitos.service'; 
-import { Habito } from '../models/habitos.model'; 
+import { HabitosService } from '../services/habitos.service';
+import { Habito } from '../models/habitos.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -50,11 +50,17 @@ export class CrearHabitosComponent {
   }
 
   agregarHabito() {
-    const { nombre, hora, fecha } = this.nuevoHabito;
-
-    if (!nombre || !fecha || !hora || !this.frecuenciaSeleccionada || !this.categoriaSeleccionada) {
-      alert('Debes llenar todos los campos');
+    if (!this.nuevoHabito.nombre || this.nuevoHabito.nombre.length > 20) {
+      alert('El nombre del hábito NO debe exceder los 20 caracteres.');
       return;
+    }
+    if (!this.nuevoHabito.fecha || !this.nuevoHabito.hora) {
+      alert('Debes seleccionar la fecha y la hora para el hábito.');
+      return;
+    }
+    if (!this.frecuenciaSeleccionada || !this.categoriaSeleccionada) {
+        alert('Debes seleccionar la frecuencia y categoría del hábito.');
+        return;
     }
 
     let frecuenciaFinal = this.frecuenciaSeleccionada;
@@ -111,5 +117,4 @@ export class CrearHabitosComponent {
     this.habitosService.eliminarHabito(id);
     this.habitos = this.habitos.filter(h => h.id !== id);
   }
-  
 }

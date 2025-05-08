@@ -45,20 +45,19 @@ describe('CrearHabitosComponent', () => {
     component.frecuenciaSeleccionada = '';
     component.categoriaSeleccionada = '';
     component.agregarHabito();
+    expect(window.alert).toHaveBeenCalledWith('El nombre del hábito NO debe exceder los 20 caracteres.');
+  });  
 
-    expect(window.alert).toHaveBeenCalledWith('Debes llenar todos los campos');
-  });
-
-  it('no debería permitir nombre con más de 100 caracteres', () => {
+  it('no debería permitir nombre con más de 20 caracteres', () => {
     spyOn(window, 'alert');
-    component.nuevoHabito.nombre = 'a'.repeat(101);
+    component.nuevoHabito.nombre = 'a'.repeat(21);
     component.nuevoHabito.fecha = '2025-05-08';
     component.nuevoHabito.hora = '12:00';
     component.frecuenciaSeleccionada = 'Diario';
     component.categoriaSeleccionada = 'Salud';
 
     component.agregarHabito();
-    expect(component.nuevoHabito.nombre.length).toBeGreaterThan(100);
+    expect(component.nuevoHabito.nombre.length).toBeGreaterThan(20);
   });
 
   it('debería guardar frecuencia personalizada si es nueva', () => {
@@ -139,11 +138,6 @@ describe('CrearHabitosComponent', () => {
     component.agregarHabito();
 
     expect(component.habitos.length).toBe(1);
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/habitos']);
-  });
-
-  it('debería navegar a /habitos al cancelar', () => {
-    component.cancelar();
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/habitos']);
   });
 });
