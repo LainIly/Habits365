@@ -1,18 +1,18 @@
 <div *ngIf="modal">
-  <div class="modal">
-    <div class="formulario">
-      <h2>Nueva categoria</h2>
-
-      <form (ngSubmit)="agregarCategoria()">
-
-        Nombre: <input id="titulo" type="text" name="titulo" [(ngModel)]="nuevaCategoria.titulo" placeholder="Salud" /><br>
-        Fecha: <input id="fecha" type="date" name="fecha" [(ngModel)]="nuevaCategoria.fecha" placeholder="Salud" />
-
-        <div class="botones">
-          <button type="button" class="cancelar" (click)="cerrarModal()">Cancelar</button>
-          <button type="submit" class="guardar">Guardar</button>
-        </div>
-      </form>
+    <div class="modal">
+      <div class="formulario">
+        <h2>Nueva categoria</h2>
+  
+        <form (ngSubmit)="agregarCategoria()">
+  
+          Nombre: <input id="titulo" type="text" name="titulo" [(ngModel)]="nuevaCategoria.titulo" placeholder="Salud" /><br>
+          Fecha: <input id="fecha" type="date" name="fecha" [(ngModel)]="nuevaCategoria.fecha" placeholder="Salud" />
+  
+          <div class="botones">
+            <button type="button" class="cancelar" (click)="cerrarModal()">Cancelar</button>
+            <button type="submit" class="guardar">Guardar</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
